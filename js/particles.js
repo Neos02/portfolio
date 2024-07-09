@@ -96,6 +96,10 @@ function createParticleEventListeners(className) {
 
       cancelAnimationFrame(element.animationFrame);
 
+      const cursorPos = getCursorPositionRelativeToElement(event);
+
+      element.particleSpawnX = cursorPos.x;
+      element.particleSpawnY = cursorPos.y;
       element.animationFrame = createParticles(element);
     };
 
