@@ -4,6 +4,18 @@
   --transition-fast: 0.1s ease-out;
   --transition-slow: 0.25s ease-out;
   --page-padding: 1rem 4rem;
+
+  --text-light: 9, 16, 21;
+  --background-light: 220, 231, 239;
+  --primary-light: 48, 76, 105;
+  --secondary-light: 173, 140, 202;
+  --accent-light: 176, 108, 188;
+
+  --text-dark: 234, 241, 246;
+  --background-dark: 16, 27, 35;
+  --primary-dark: 150, 178, 207;
+  --secondary-dark: 86, 53, 115;
+  --accent-dark: 135, 67, 147;
 }
 
 @media only screen and (max-width: 992px) {
@@ -14,21 +26,21 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --text: 9, 16, 21;
-    --background: 220, 231, 239;
-    --primary: 48, 76, 105;
-    --secondary: 173, 140, 202;
-    --accent: 176, 108, 188;
+    --text: var(--text-light);
+    --background: var(--background-light);
+    --primary: var(--primary-light);
+    --secondary: var(--secondary-light);
+    --accent: var(--accent-light);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: 234, 241, 246;
-    --background: 16, 27, 35;
-    --primary: 150, 178, 207;
-    --secondary: 86, 53, 115;
-    --accent: 135, 67, 147;
+    --text: var(--text-dark);
+    --background: var(--background-dark);
+    --primary: var(--primary-dark);
+    --secondary: var(--secondary-dark);
+    --accent: var(--accent-dark);
   }
 }
 
@@ -181,7 +193,7 @@ section {
   height: 0.25rem;
   filter: blur(1px);
   border-radius: 50%;
-  background-color: rgb(var(--text));
+  background-color: rgb(var(--text-dark));
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.05); /* Prevents pixels from being left behind during animation */
   pointer-events: none;
 }
@@ -599,6 +611,7 @@ nav.scrolled {
   max-height: 80vh;
   aspect-ratio: 2 / 3;
   border-radius: 0.75rem;
+  color: rgb(var(--text-dark));
   overflow: hidden;
 }
 
