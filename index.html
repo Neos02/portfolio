@@ -29,6 +29,8 @@
     />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </head>
   <body>
     <nav>
@@ -222,47 +224,72 @@
     <section id="contact">
       <h1 class="heading-underline">Contact</h1>
 
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <input
-          type="hidden"
-          name="access_key"
-          value="cf696f50-5fc0-4ddb-9718-3584c26475c1"
-        />
+      <div class="contact-container">
+        <form
+          id="contactForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="cf696f50-5fc0-4ddb-9718-3584c26475c1"
+          />
 
-        <div>
-          <div class="heading-4">Name</div>
+          <input
+            type="hidden"
+            name="subject"
+            value="You have a message from neos02.github.io!"
+          />
+
+          <input type="hidden" name="from_name" value="neos02.github.io" />
+
+          <input type="checkbox" name="botcheck" hidden />
 
           <div>
-            <input name="name" type="text" placeholder="First" required />
-            <input name="lname" type="text" placeholder="Last" required />
+            <div class="heading-4">Name</div>
+
+            <div>
+              <input name="name" type="text" placeholder="First" required />
+              <input name="lname" type="text" placeholder="Last" required />
+            </div>
           </div>
+
+          <div>
+            <div class="heading-4">Email</div>
+
+            <input name="email" type="email" placeholder="Email" required />
+          </div>
+
+          <div>
+            <div class="heading-4">Message</div>
+
+            <textarea
+              name="message"
+              placeholder="Type your message here..."
+              rows="10"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            class="btn-primary particle-btn h-captcha"
+            data-captcha="true"
+            data-callback="submitContact"
+          >
+            Send
+          </button>
+        </form>
+
+        <div class="hidden" id="formLoading">
+          <i class="fas fa-spinner fa-spin-pulse fa-2xl"></i>
         </div>
 
-        <div>
-          <div class="heading-4">Email</div>
-
-          <input name="email" type="email" placeholder="Email" required />
+        <div class="hidden" id="formResult">
+          <i class="fa-regular fa-circle-check fa-10x"></i>
+          <p class="heading-5">Form successfully submitted!</p>
         </div>
-
-        <div>
-          <div class="heading-4">Message</div>
-
-          <textarea
-            name="message"
-            placeholder="Type your message here..."
-            rows="10"
-            required
-          ></textarea>
-        </div>
-
-        <button
-          class="btn-primary particle-btn"
-          href="https://github.com/Neos02/ScrapDiscordBot"
-          target="_blank"
-        >
-          Send
-        </button>
-      </form>
+      </div>
     </section>
 
     <script type="text/javascript" src="./js/utils.js"></script>

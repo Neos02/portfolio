@@ -157,6 +157,10 @@ section {
   z-index: -1;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /**************** Buttons ****************/
 
 .btn-primary {
@@ -712,6 +716,13 @@ nav.scrolled {
   padding: var(--page-padding);
 }
 
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 31.25rem;
+}
+
 #contact form {
   display: flex;
   flex-direction: column;
@@ -738,6 +749,23 @@ nav.scrolled {
   align-items: center;
   gap: 1rem;
   width: 100%;
+}
+
+#formLoading,
+#formResult {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#formResult {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
